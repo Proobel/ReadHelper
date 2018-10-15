@@ -1,6 +1,6 @@
 ﻿namespace ReadHelper
 {
-    partial class Form1
+    partial class ReadHelperForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,28 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.TranslatedTextLabel = new System.Windows.Forms.Label();
+            this.TrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
-            // label1
+            // TranslatedTextLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(37, 167);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.TranslatedTextLabel.AutoSize = true;
+            this.TranslatedTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TranslatedTextLabel.Location = new System.Drawing.Point(37, 167);
+            this.TranslatedTextLabel.Name = "TranslatedTextLabel";
+            this.TranslatedTextLabel.Size = new System.Drawing.Size(285, 46);
+            this.TranslatedTextLabel.TabIndex = 0;
+            this.TranslatedTextLabel.Text = "TranslatedText";
             // 
-            // Form1
+            // TrayIcon
+            // 
+            this.TrayIcon.Text = "Proobel Book Helper";
+            this.TrayIcon.Visible = true;
+            this.TrayIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.TrayIcon_MouseDoubleClick);
+            // 
+            // ReadHelperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 386);
-            this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.TranslatedTextLabel);
+            this.Name = "ReadHelperForm";
+            this.Text = "Proobel Book Helper";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.ReadHelperForm_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -57,7 +66,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TranslatedTextLabel;
+        private System.Windows.Forms.NotifyIcon TrayIcon;
     }
 }
 
