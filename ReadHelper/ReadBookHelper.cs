@@ -20,7 +20,14 @@ namespace ReadHelper
 
             ClipboardMonitor.OnClipboardChange += Clip;
             ClipboardMonitor.Start();
-            Trans.OnTranslateChange += () => { TranslatedTextLabel.BeginInvoke((MethodInvoker)(()=> TranslatedTextLabel.Text = Trans.TranslatedText));  };
+            //Trans.OnTranslateChange += () => { TranslatedTextLabel.BeginInvoke((MethodInvoker)(()=> TranslatedTextLabel.Text = Trans.TranslatedText));  };
+            Trans.OnTranslateChange += () =>
+             {
+                 TrayIcon.BalloonTipTitle = "Перевод скопированного текста";
+                 TrayIcon.BalloonTipText = Trans.TranslatedText;
+                 TrayIcon.ShowBalloonTip(100);
+             };
+
         }
 
         public static void Clip(ClipboardFormat clipboard, object data)

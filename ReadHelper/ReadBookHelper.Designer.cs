@@ -37,7 +37,7 @@
             // 
             this.TranslatedTextLabel.AutoSize = true;
             this.TranslatedTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TranslatedTextLabel.Location = new System.Drawing.Point(37, 167);
+            this.TranslatedTextLabel.Location = new System.Drawing.Point(88, 9);
             this.TranslatedTextLabel.Name = "TranslatedTextLabel";
             this.TranslatedTextLabel.Size = new System.Drawing.Size(185, 46);
             this.TranslatedTextLabel.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 386);
+            this.ClientSize = new System.Drawing.Size(363, 348);
             this.Controls.Add(this.TranslatedTextLabel);
             this.Name = "ReadBookHelper";
             this.Text = "Form1";
