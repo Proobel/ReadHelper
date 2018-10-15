@@ -17,7 +17,7 @@ namespace ReadHelper
         {
             TrayIcon.Icon = Properties.Resources.BookIcon;
             WindowState = FormWindowState.Minimized;
-
+            Icon = Properties.Resources.BookIcon;
             ClipboardMonitor.OnClipboardChange += Clip;
             ClipboardMonitor.Start();
             //Trans.OnTranslateChange += () => { TranslatedTextLabel.BeginInvoke((MethodInvoker)(()=> TranslatedTextLabel.Text = Trans.TranslatedText));  };
@@ -49,6 +49,11 @@ namespace ReadHelper
             TrayIcon.Visible = false;
             ShowInTaskbar = true;
             WindowState = FormWindowState.Normal;
+        }
+
+        private void AboutMenuItem_Click(object sender, EventArgs e)
+        {
+            new AboutBox().Show();
         }
     }
 }
