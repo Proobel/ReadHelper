@@ -17,7 +17,7 @@ namespace ReadHelper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReadHelperForm());
+            Application.Run(new Form1());
         }
     }
 }
