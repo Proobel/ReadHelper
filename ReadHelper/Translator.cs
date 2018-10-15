@@ -1,19 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
+
 
 namespace ReadHelper
 {
-    public static class Translator
+    public class Translator
     {
-        public static string TranslateByYandex(string Text)
+        public delegate void TranslatedTextChange();
+        public event TranslatedTextChange OnTranslateChange = () => {
+            //return string.Empty; 
+};
+        private string _translatedText;
+
+        public string TranslatedText
         {
-            string str = "";
+            get { return _translatedText; }
+            set { _translatedText = value; OnTranslateChange(); }
+        }
+
+        public string TranslateByYandex(string Text)
+        {
             try
             {
                 XmlDocument xmlDocument = new XmlDocument();
@@ -24,7 +32,7 @@ namespace ReadHelper
                     xmlDocument.Load(XmlFile);
                     foreach (XmlElement x in xmlDocument.DocumentElement)
                     {
-                        str = x.InnerText;
+                        TranslatedText = x.InnerText;
                     }
                 }
             }
@@ -60,7 +68,7 @@ namespace ReadHelper
             {
 
             }
-            return str;
+            return TranslatedText;
         }
 
         private static string GetKey()
