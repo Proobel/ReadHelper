@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="Translate_from" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Английский</Value>
+      <Value Profile="(Default)">en</Value>
     </Setting>
     <Setting Name="Translate_to" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Русский</Value>
+      <Value Profile="(Default)">ru</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Xml;
@@ -14,7 +15,7 @@ namespace ReadHelper
         public static Dictionary<string, string> Languages = new Dictionary<string, string>();
 
         public delegate void TranslatedTextChange();
-        public event TranslatedTextChange OnTranslateChange = () => {};
+        public event TranslatedTextChange OnTranslateChange = () => { };
         private string _translatedText;
         public string TranslatedText
         {
@@ -25,6 +26,7 @@ namespace ReadHelper
         public Translator()
         {
             GetLanguages();
+            Languages = Languages.OrderBy(x => x.Value).Select( x=> new {x.Key, x.Value }).ToDictionary(x=>x.Key,x=>x.Value);
         }
 
         public string TranslateByYandex(string Text, string Lang_from = "en",string Lang_to = "ru")
@@ -82,10 +84,11 @@ namespace ReadHelper
 
         public static string GetKey()
         {
-            using (var stream = new StreamReader(@"C:\Users\Proobel\Documents\Visual Studio 2017\Projects\ReadHelper\ReadHelper\YandexTranslateAPIKEY.key"))
-            {
-                return stream.ReadLine();
-            }
+            //using (var stream = new StreamReader(@"C:\Users\Proobel\Documents\Visual Studio 2017\Projects\ReadHelper\ReadHelper\YandexTranslateAPIKEY.key"))
+            //{
+            //    return stream.ReadLine();
+            //}
+            return Properties.Resources.APIKey;
         }
 
         public static string[] GetLanguages(string Ui ="ru")

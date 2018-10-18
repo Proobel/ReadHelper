@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.Runtime.InteropServices;
+using ReadHelper;
 
 namespace ReadHelper
 {
@@ -25,15 +25,23 @@ namespace ReadHelper
             MinimizeBox = false;
             TrFromComboBox.Items.AddRange(Translator.Languages.Values.ToArray());
             TrToComboBox.Items.AddRange(Translator.Languages.Values.ToArray());
-            TrFromComboBox.SelectedItem = Properties.Settings.Default.Translate_from;
-            TrToComboBox.SelectedItem = Properties.Settings.Default.Translate_to;
+            TrFromComboBox.SelectedItem = Translator.Languages[Properties.Settings.Default.Translate_from];
+            TrToComboBox.SelectedItem = Translator.Languages[Properties.Settings.Default.Translate_to];
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Translate_from = TrFromComboBox.SelectedText;
-            Properties.Settings.Default.Translate_to = TrToComboBox.SelectedText;
+            Properties.Settings.Default.Translate_from = Translator.Languages.GetKey(TrFromComboBox.SelectedItem as string);
+            var t = Translator.Languages.GetKey(TrFromComboBox.SelectedItem as string);
+            Properties.Settings.Default.Translate_to = Translator.Languages.GetKey(TrToComboBox.SelectedItem as string);
             Properties.Settings.Default.Save();
+            MessageBox.Show(
+                text: "Настройки успешно сохранены",
+                caption: "Повезло!",
+                icon: MessageBoxIcon.Asterisk,
+                buttons: MessageBoxButtons.OK
+                );
+            var s = Properties.Settings.Default.Translate_from;
         }
     }
 }

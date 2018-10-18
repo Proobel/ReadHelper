@@ -25,7 +25,7 @@ namespace ReadHelper.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Английский")]
+        [global::System.Configuration.DefaultSettingValueAttribute("en")]
         public string Translate_from {
             get {
                 return ((string)(this["Translate_from"]));
@@ -37,7 +37,7 @@ namespace ReadHelper.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Русский")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ru")]
         public string Translate_to {
             get {
                 return ((string)(this["Translate_to"]));

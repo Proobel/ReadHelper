@@ -16,7 +16,12 @@ namespace ReadHelper
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            if (Properties.Settings.Default.Translate_from == "")
+            {
+                Properties.Settings.Default.Translate_from = "en";
+                Properties.Settings.Default.Translate_to = "ru";
+                Properties.Settings.Default.Save();
+            }
             TrayIcon.Icon = Properties.Resources.BookIcon;
             WindowState = FormWindowState.Minimized;
             Icon = Properties.Resources.BookIcon;
@@ -33,7 +38,7 @@ namespace ReadHelper
 
         public static void Clip(ClipboardFormat clipboard, object data)
         {
-            Trans.TranslateByYandex(data as string, Properties.Settings.Default.Translate_from, Properties.Settings.Default.Translate_to);
+           Trans.TranslateByYandex(data as string, Properties.Settings.Default.Translate_from, Properties.Settings.Default.Translate_to);
         }
 
         private void ReadBookHelper_Resize(object sender, EventArgs e)
