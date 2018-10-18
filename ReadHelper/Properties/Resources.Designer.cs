@@ -61,6 +61,15 @@ namespace ReadHelper.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на trnsl.1.1.20181013T132254Z.544ada754bc00187.a32d5a14796ec593d804c3431ec5480e99e25c34.
+        /// </summary>
+        internal static string APIKey {
+            get {
+                return ResourceManager.GetString("APIKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon BookIcon {
