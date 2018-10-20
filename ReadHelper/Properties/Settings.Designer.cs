@@ -46,5 +46,29 @@ namespace ReadHelper.Properties {
                 this["Translate_to"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsNormalClose {
+            get {
+                return ((bool)(this["IsNormalClose"]));
+            }
+            set {
+                this["IsNormalClose"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsTaskManager {
+            get {
+                return ((bool)(this["IsTaskManager"]));
+            }
+            set {
+                this["IsTaskManager"] = value;
+            }
+        }
     }
 }

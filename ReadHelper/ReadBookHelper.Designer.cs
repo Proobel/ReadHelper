@@ -99,6 +99,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ReadBookHelper";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReadBookHelper_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.ReadBookHelper_Resize);
             this.menuStrip1.ResumeLayout(false);

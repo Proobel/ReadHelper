@@ -91,7 +91,7 @@ namespace ReadHelper
             return Properties.Resources.APIKey;
         }
 
-        public static string[] GetLanguages(string Ui ="ru")
+        public static void GetLanguages(string Ui ="ru")
         {
             try
             {
@@ -131,7 +131,6 @@ namespace ReadHelper
                     responseText = reader.ReadToEnd();
                 }
             }
-            return new string[] { "" };
         }
 
     }

@@ -36,7 +36,10 @@
             this.TranslateToLabel = new System.Windows.Forms.Label();
             this.TrFromComboBox = new System.Windows.Forms.ComboBox();
             this.TranslateFromLabel = new System.Windows.Forms.Label();
+            this.CloseOptionСheckBox = new System.Windows.Forms.CheckBox();
+            this.ShowInTaskManagerCheckBox = new System.Windows.Forms.CheckBox();
             this.TabMenu.SuspendLayout();
+            this.GeneralTab.SuspendLayout();
             this.TranslateTab.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,26 +47,27 @@
             // 
             this.TabMenu.Controls.Add(this.GeneralTab);
             this.TabMenu.Controls.Add(this.TranslateTab);
-            this.TabMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.TabMenu.Location = new System.Drawing.Point(0, 0);
             this.TabMenu.Name = "TabMenu";
             this.TabMenu.SelectedIndex = 0;
-            this.TabMenu.Size = new System.Drawing.Size(422, 299);
+            this.TabMenu.Size = new System.Drawing.Size(422, 271);
             this.TabMenu.TabIndex = 0;
             // 
             // GeneralTab
             // 
+            this.GeneralTab.Controls.Add(this.ShowInTaskManagerCheckBox);
+            this.GeneralTab.Controls.Add(this.CloseOptionСheckBox);
             this.GeneralTab.Location = new System.Drawing.Point(4, 22);
             this.GeneralTab.Name = "GeneralTab";
             this.GeneralTab.Padding = new System.Windows.Forms.Padding(3);
-            this.GeneralTab.Size = new System.Drawing.Size(414, 273);
+            this.GeneralTab.Size = new System.Drawing.Size(414, 245);
             this.GeneralTab.TabIndex = 0;
             this.GeneralTab.Text = "Общие";
             this.GeneralTab.UseVisualStyleBackColor = true;
             // 
             // TranslateTab
             // 
-            this.TranslateTab.Controls.Add(this.SaveButton);
             this.TranslateTab.Controls.Add(this.TrToComboBox);
             this.TranslateTab.Controls.Add(this.TranslateToLabel);
             this.TranslateTab.Controls.Add(this.TrFromComboBox);
@@ -71,14 +75,14 @@
             this.TranslateTab.Location = new System.Drawing.Point(4, 22);
             this.TranslateTab.Name = "TranslateTab";
             this.TranslateTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TranslateTab.Size = new System.Drawing.Size(414, 273);
+            this.TranslateTab.Size = new System.Drawing.Size(414, 245);
             this.TranslateTab.TabIndex = 1;
             this.TranslateTab.Text = "Перевод";
             this.TranslateTab.UseVisualStyleBackColor = true;
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(331, 244);
+            this.SaveButton.Location = new System.Drawing.Point(343, 273);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 4;
@@ -90,7 +94,7 @@
             // 
             this.TrToComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TrToComboBox.FormattingEnabled = true;
-            this.TrToComboBox.Location = new System.Drawing.Point(13, 69);
+            this.TrToComboBox.Location = new System.Drawing.Point(10, 68);
             this.TrToComboBox.Name = "TrToComboBox";
             this.TrToComboBox.Size = new System.Drawing.Size(121, 21);
             this.TrToComboBox.TabIndex = 3;
@@ -122,16 +126,43 @@
             this.TranslateFromLabel.TabIndex = 0;
             this.TranslateFromLabel.Text = "Переводить с :";
             // 
+            // CloseOptionСheckBox
+            // 
+            this.CloseOptionСheckBox.AutoSize = true;
+            this.CloseOptionСheckBox.Checked = true;
+            this.CloseOptionСheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CloseOptionСheckBox.Location = new System.Drawing.Point(9, 7);
+            this.CloseOptionСheckBox.Name = "CloseOptionСheckBox";
+            this.CloseOptionСheckBox.Size = new System.Drawing.Size(326, 17);
+            this.CloseOptionСheckBox.TabIndex = 0;
+            this.CloseOptionСheckBox.Text = "Выключение по нажатию на крестик в верхнем левом углу";
+            this.CloseOptionСheckBox.UseVisualStyleBackColor = true;
+            // 
+            // ShowInTaskManagerCheckBox
+            // 
+            this.ShowInTaskManagerCheckBox.AutoSize = true;
+            this.ShowInTaskManagerCheckBox.Checked = true;
+            this.ShowInTaskManagerCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ShowInTaskManagerCheckBox.Location = new System.Drawing.Point(9, 30);
+            this.ShowInTaskManagerCheckBox.Name = "ShowInTaskManagerCheckBox";
+            this.ShowInTaskManagerCheckBox.Size = new System.Drawing.Size(376, 17);
+            this.ShowInTaskManagerCheckBox.TabIndex = 1;
+            this.ShowInTaskManagerCheckBox.Text = "Показывать иконку в панели задач Windows в свернутом состоянии";
+            this.ShowInTaskManagerCheckBox.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 299);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.TabMenu);
             this.Name = "SettingsForm";
             this.Text = "SettingsFrom";
             this.Load += new System.EventHandler(this.SettingsFrom_Load);
             this.TabMenu.ResumeLayout(false);
+            this.GeneralTab.ResumeLayout(false);
+            this.GeneralTab.PerformLayout();
             this.TranslateTab.ResumeLayout(false);
             this.TranslateTab.PerformLayout();
             this.ResumeLayout(false);
@@ -148,5 +179,7 @@
         private System.Windows.Forms.ComboBox TrFromComboBox;
         private System.Windows.Forms.Label TranslateFromLabel;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.CheckBox CloseOptionСheckBox;
+        private System.Windows.Forms.CheckBox ShowInTaskManagerCheckBox;
     }
 }

@@ -27,6 +27,8 @@ namespace ReadHelper
             TrToComboBox.Items.AddRange(Translator.Languages.Values.ToArray());
             TrFromComboBox.SelectedItem = Translator.Languages[Properties.Settings.Default.Translate_from];
             TrToComboBox.SelectedItem = Translator.Languages[Properties.Settings.Default.Translate_to];
+            CloseOptionСheckBox.Checked = Properties.Settings.Default.IsNormalClose;
+            ShowInTaskManagerCheckBox.Checked = Properties.Settings.Default.IsTaskManager;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -34,6 +36,8 @@ namespace ReadHelper
             Properties.Settings.Default.Translate_from = Translator.Languages.GetKey(TrFromComboBox.SelectedItem as string);
             var t = Translator.Languages.GetKey(TrFromComboBox.SelectedItem as string);
             Properties.Settings.Default.Translate_to = Translator.Languages.GetKey(TrToComboBox.SelectedItem as string);
+            Properties.Settings.Default.IsNormalClose = CloseOptionСheckBox.Checked;
+            Properties.Settings.Default.IsTaskManager = ShowInTaskManagerCheckBox.Checked;
             Properties.Settings.Default.Save();
             MessageBox.Show(
                 text: "Настройки успешно сохранены",

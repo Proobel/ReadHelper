@@ -45,7 +45,7 @@ namespace ReadHelper
         {
             if (WindowState == FormWindowState.Minimized)
             {
-                ShowInTaskbar = false;
+                ShowInTaskbar = Properties.Settings.Default.IsTaskManager ? true : false;
                 TrayIcon.Visible = true;
             }
         }
@@ -65,6 +65,16 @@ namespace ReadHelper
         private void SettingsMenuItem_Click(object sender, EventArgs e)
         {
             new SettingsForm().ShowDialog();
+        }
+
+        private void ReadBookHelper_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Properties.Settings.Default.IsNormalClose && e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                ShowInTaskbar = Properties.Settings.Default.IsTaskManager ? true : false;
+                WindowState = FormWindowState.Minimized;
+            }
         }
     }
 }

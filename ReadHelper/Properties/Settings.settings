@@ -8,5 +8,11 @@
     <Setting Name="Translate_to" Type="System.String" Scope="User">
       <Value Profile="(Default)">ru</Value>
     </Setting>
+    <Setting Name="IsNormalClose" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="IsTaskManager" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
